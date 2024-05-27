@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Results</title>
+  </head>
+  <body>
+    <h1>Search Results</h1>
+    <ul>
+      {% for video in videos %}
+      <li>
+        <img src="{{ video.thumbnail_url }}" alt="Thumbnail" />
+        <!-- 썸네일 이미지 -->
+        <a href="{% url 'play' video.video_id %}">{{ video.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    <a href="{% url 'index' %}">Search Again</a>
+  </body>
+</html>
