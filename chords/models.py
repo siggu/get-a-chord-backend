@@ -8,6 +8,7 @@ class Chord(models.Model):
     enharmonicChordName = models.CharField(max_length=15)
     voicingID = models.CharField(max_length=30)
     tones = models.CharField(max_length=20)
+    # imageUrl = models.ImageField(default="")
 
 
 # # Create your models here.
