@@ -29,14 +29,14 @@ class Chords(APIView):
 
 
 class ChordDetail(APIView):
-    def get_object(self, chordName):
+    def get_object(self, chordType):
         try:
-            return Chord.objects.filter(chordName=chordName)
+            return Chord.objects.filter(chord_type=chordType)
         except Chord.DoesNotExist:
             raise NotFound
 
-    def get(self, request, chordName):
-        chord = self.get_object(chordName)
+    def get(self, request, chordType):
+        chord = self.get_object(chordType)
         serializer = serializers.ChordSerializer(
             chord,
             many=True,

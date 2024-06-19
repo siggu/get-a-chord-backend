@@ -6,10 +6,6 @@ from .models import Chord
 @admin.register(Chord)
 class ChordAdmin(admin.ModelAdmin):
     list_display = (
-        "strings",
-        "fingering",
-        "chordName",
-        "enharmonicChordName",
-        "voicingID",
-        "tones",
+        "name",
+        "chord_type",
     )
