@@ -38,6 +38,7 @@ ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
 # Application definition
 THIRD_PARTY_APPS = [
     "rest_framework",
+    "corsheaders",
 ]
 
 CUSTOM_APPS = [
@@ -61,6 +62,7 @@ INSTALLED_APPS = SYSTEM_APPS + THIRD_PARTY_APPS + CUSTOM_APPS
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -85,6 +87,8 @@ TEMPLATES = [
         },
     },
 ]
+
+CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
 
 
 WSGI_APPLICATION = "config.wsgi.application"
